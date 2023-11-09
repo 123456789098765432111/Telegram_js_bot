@@ -92,7 +92,7 @@ const end_order = async (chatId, location) => {
 const show_location = async (chatId, _id) => {
   let user = await User.findOne({ chatId }).lean()
   if (user.admin) {
-    // console.log(_id);
+    console.log(_id);
     let order = await Order.findOne().lean()
     bot.sendLocation(chatId, order?.location?.latitude, order.location.longitude)
   } else {
